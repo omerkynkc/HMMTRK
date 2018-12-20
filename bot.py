@@ -10,18 +10,15 @@ def get_url(url):
     content = response.content.decode("utf8")
     return content
 
-
 def get_json_from_url(url):
     content = get_url(url)
     js = json.loads(content)
     return js
 
-
 def get_updates():
     url = URL + "getUpdates"
     js = get_json_from_url(url)
     return js
-
 
 def get_last_chat_id_and_text(updates):
     num_updates = len(updates["result"])
@@ -30,7 +27,6 @@ def get_last_chat_id_and_text(updates):
     chat_id = updates["result"][last_update]["message"]["chat"]["id"]
     print(chat_id)
     return (text, chat_id)
-
 """
 def send_message(text, chat_id):
     text = urllib.parse.quote_plus(text)
@@ -66,11 +62,13 @@ def echo_all(updates):
 
 def main():
     last_update_id = None
+    print(last_update_id)
     while True:
         updates = get_updates(last_update_id)
         if len(updates["result"]) > 0:
             last_update_id = get_last_update_id(updates) + 1
             echo_all(updates)
+            print("work")
         time.sleep(0.5)
 
 if __name__ == '__main__':

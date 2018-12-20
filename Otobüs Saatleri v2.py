@@ -24,6 +24,7 @@ def calc(day):
         count += 1
     print("Next Bus: {}".format(day[count]))
     print("{} remaning".format(sub))
+    return (round(sub//3600),floor(sub/60%60))
     print(round(sub//3600),floor(sub/60%60))
 cd = 1
 if cd == "Sun":
