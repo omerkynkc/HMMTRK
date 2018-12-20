@@ -17,7 +17,7 @@ def start(bot, update):
 
 def help(bot, update):
     """Send a message when the command /help is issued."""
-    update.message.reply_text('Help!')
+    update.message.reply_text('Kullanılabilir komutlar:\n/rk  /hs  /mekik eğer bir sorun yaşıyorsanız bize ulaşın..')
 
 def rk(bot, update):
     update.message.reply_text(bus_calc.calc())
